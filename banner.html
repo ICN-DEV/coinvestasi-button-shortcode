@@ -37,15 +37,25 @@
 <body>
 
   <div class="banner" id="dynamicBanner">
-    <!-- Banner copy will be dynamically set here -->
+    <!-- Banner copy, button URL, and button label will be dynamically set here -->
   </div>
 
   <script>
-    // Get query parameters
-    const urlParams = new URLSearchParams(window.location.search);
-    const bannerCopy = urlParams.get('banner_copy') || 'Default Banner Copy';
-    const buttonURL = urlParams.get('button_url') || '#';
-    const buttonLabel = urlParams.get('button_label') || 'Default Button Label';
+    // Function to get URL parameters
+    function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, '\\$&');
+      var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    // Get parameters from the URL or use default values
+    var bannerCopy = getParameterByName('banner_copy') || 'Default Banner Copy';
+    var buttonURL = getParameterByName('button_url') || '#';
+    var buttonLabel = getParameterByName('button_label') || 'Default Button Label';
 
     // Set dynamic content
     document.getElementById('dynamicBanner').innerHTML = `<p>${bannerCopy}</p><a href="${buttonURL}" class="button">${buttonLabel}</a>`;

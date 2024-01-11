@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const url = urlParams.get('url') || "#";
     const bannerCopy = urlParams.get('bannerCopy') || "Default Banner Copy";
 
-    // Create HTML elements
+    // Create a container div
     const container = document.createElement('div');
     container.style.width = '100%';
     container.style.backgroundColor = '#3498db';
@@ -13,26 +13,12 @@ document.addEventListener("DOMContentLoaded", function() {
     container.style.padding = '20px';
     container.style.color = '#ffffff';
 
-    const paragraph = document.createElement('p');
-    paragraph.style.fontSize = '18px';
-    paragraph.style.lineHeight = '24px';
-    paragraph.style.marginBottom = '10px';
-    paragraph.innerHTML = bannerCopy;
+    // Create HTML content
+    container.innerHTML = `
+        <p style="font-size: 18px; line-height: 24px; margin-bottom: 10px;">${bannerCopy}</p>
+        <a href="${url}" style="display: inline-block; background-color: #ffffff; color: #3498db; padding: 10px 20px; text-decoration: none; font-size: 16px; font-weight: bold; border-radius: 5px;">${labelCopy}</a>
+    `;
 
-    const link = document.createElement('a');
-    link.href = url;
-    link.style.display = 'inline-block';
-    link.style.backgroundColor = '#ffffff';
-    link.style.color = '#3498db';
-    link.style.padding = '10px 20px';
-    link.style.textDecoration = 'none';
-    link.style.fontSize = '16px';
-    link.style.fontWeight = 'bold';
-    link.style.borderRadius = '5px';
-    link.innerHTML = labelCopy;
-
-    // Append elements to the document
-    container.appendChild(paragraph);
-    container.appendChild(link);
+    // Append the container to the body
     document.body.appendChild(container);
 });

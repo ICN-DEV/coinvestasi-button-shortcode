@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom Banner Shortcode
  * Description: A custom plugin for embedding a banner with dynamic content.
- * Version: 1.1
+ * Version: 1.2
  * Author: Farras Pratama
  */
 

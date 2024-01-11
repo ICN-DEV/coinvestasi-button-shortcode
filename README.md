@@ -21,4 +21,4 @@ Welcome to the Coinvestasi Button Shortcode repository! This repository contains
 Use the following shortcode in your WordPress posts or pages to embed the banner with dynamic content:
 
 ```html
-[custom_banner banner_copy="Your Custom Copy" button_url="https://your-custom-url.com" button_label="Click Me"]
+[custom_banner banner_copy="Your Custom Banner Copy" button_url="https://coinvestasi.com" button_label="Click Me"]

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Banner</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .banner {
+      background-color: #3498db; /* Change the background color as needed */
+      color: #ffffff; /* Change the text color as needed */
+      text-align: center;
+      padding: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #2ecc71; /* Change the button color as needed */
+      color: #ffffff; /* Change the button text color as needed */
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #27ae60; /* Change the button color on hover as needed */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner" id="dynamicBanner">
+    <!-- Banner copy will be dynamically set here -->
+  </div>
+
+  <script>
+    // Get query parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const bannerCopy = urlParams.get('banner_copy') || 'Default Banner Copy';
+    const buttonURL = urlParams.get('button_url') || '#';
+    const buttonLabel = urlParams.get('button_label') || 'Default Button Label';
+
+    // Set dynamic content
+    document.getElementById('dynamicBanner').innerHTML = `<p>${bannerCopy}</p><a href="${buttonURL}" class="button">${buttonLabel}</a>`;
+  </script>
+
+</body>
+</html>

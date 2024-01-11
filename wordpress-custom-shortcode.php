@@ -19,7 +19,7 @@ function custom_banner_shortcode($atts) {
     );
 
     // Generate the HTML for the iframe with dynamic content
-    $iframe_html = '<iframe src="https://icn-dev.github.io/coinvestasi-button-shortcode/banner.html" width="100%" height="300" frameborder="0"></iframe>';
+    $iframe_html = '<iframe src="https://icn-dev.github.io/coinvestasi-button-shortcode/banner.html" width="100%" height="auto" frameborder="0"></iframe>';
 
     // Generate the JavaScript to update the iframe content
     $script = '<script>

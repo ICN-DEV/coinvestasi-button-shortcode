@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom Banner Shortcode
  * Description: A custom plugin for embedding a banner with dynamic content.
- * Version: 1.2
+ * Version: 1.3
  * Author: Farras Pratama
  */
 
@@ -19,11 +19,11 @@ function custom_banner_shortcode($atts) {
     );
 
     // Generate the HTML for the iframe with dynamic content
-    $iframe_html = '<iframe src="https://icn-dev.github.io/coinvestasi-button-shortcode/banner.html" width="100%" height="auto" frameborder="0"></iframe>';
+    $iframe_html = '<iframe id="customBannerIframe" src="https://icn-dev.github.io/coinvestasi-button-shortcode/banner.html" width="100%" height="auto" frameborder="0"></iframe>';
 
     // Generate the JavaScript to update the iframe content
     $script = '<script>
-                  var iframe = document.querySelector("iframe");
+                  var iframe = document.getElementById("customBannerIframe");
                   iframe.onload = function() {
                       iframe.contentWindow.postMessage({
                           bannerCopy: "' . esc_js($atts['banner_copy']) . '",

@@ -5,20 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const url = urlParams.get('url') || "#";
     const bannerCopy = urlParams.get('bannerCopy') || "Default Banner Copy";
 
-    // Create a container div
-    const container = document.createElement('div');
-    container.style.width = '100%';
-    container.style.backgroundColor = '#3498db';
-    container.style.textAlign = 'center';
-    container.style.padding = '20px';
-    container.style.color = '#ffffff';
-
-    // Create HTML content
-    container.innerHTML = `
-        <p style="font-size: 18px; line-height: 24px; margin-bottom: 10px;">${bannerCopy}</p>
-        <a href="${url}" style="display: inline-block; background-color: #ffffff; color: #3498db; padding: 10px 20px; text-decoration: none; font-size: 16px; font-weight: bold; border-radius: 5px;">${labelCopy}</a>
-    `;
-
-    // Append the container to the body
-    document.body.appendChild(container);
+    // Update HTML content with parameters
+    document.getElementById("banner-copy").innerHTML = bannerCopy;
+    document.getElementById("banner-button").innerHTML = labelCopy;
+    document.getElementById("banner-button").href = url;
 });
